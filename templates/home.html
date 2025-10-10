@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to the Home Page!</h1>
+    {% if user %}
+        <p>Hello, {{ user.name }}!</p>
+        <p>Your admin status is: {{ user.is_admin }}</p>
+    {% else %}
+        <p>You are not logged in. Please <a href="/login">login</a>.</p>
+    {% endif %}
+</body>
+</html>
+
