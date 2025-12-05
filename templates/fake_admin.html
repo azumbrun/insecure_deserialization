@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f4; }
+        .header { background-color: #d9534f; color: white; padding: 15px; }
+        .container { padding: 20px; }
+        .card { background: white; padding: 20px; margin-bottom: 20px; border: 1px solid #ddd; }
+        button { background-color: #d9534f; color: white; border: none; padding: 10px 20px; cursor: pointer; }
+        button:hover { background-color: #c9302c; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ADMINISTRATOR DASHBOARD</h1>
+        <p>Welcome, SuperUser: {{ user.name }}</p>
+    </div>
+    
+    <div class="container">
+        <div class="card">
+            <h3>System Status</h3>
+            <p style="color: green;"><strong>ONLINE - SECURE</strong></p>
+            <p>Uptime: 42 days, 11 hours</p>
+        </div>
+
+        <div class="card">
+            <h3>User Management</h3>
+            <p>Warning: You are in read-only mode.</p>
+            <table border="1" cellpadding="10" style="width: 100%; border-collapse: collapse;">
+                <tr>
+                    <th>User ID</th>
+                    <th>Username</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>1001</td>
+                    <td>admin</td>
+                    <td>SuperAdmin</td>
+                    <td><button onclick="alert('Error: Permission Denied')">Delete</button></td>
+                </tr>
+                <tr>
+                    <td>1002</td>
+                    <td>user</td>
+                    <td>Standard</td>
+                    <td><button onclick="alert('Error: Database locked')">Ban</button></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="card">
+            <h3>Server Logs</h3>
+            <pre>
+[INFO] System backup completed.
+[WARN] Unauthorized access attempt detected from your IP.
+[INFO] Monitoring active...
+            </pre>
+        </div>
+    </div>
+</body>
+</html>
